@@ -52,12 +52,12 @@ public class ShooterSub extends SubsystemBase {
 
     // initiaize the talon fx
     /* newer config API */
-			TalonFXConfiguration configs = new TalonFXConfiguration();
+		//	TalonFXConfiguration configs = new TalonFXConfiguration();
 			/* select integ-sensor for PID0 (it doesn't matter if PID is actually used) */
 			//configs.primaryPID.selectedFeedbackSensor = FeedbackDevice.IntegratedSensor;
 			/* config all the settings */
-      upperMotor.configAllSettings(configs);
-      lowerMotor.configAllSettings(configs);
+    //  upperMotor.configAllSettings(configs);
+     // lowerMotor.configAllSettings(configs);
   }
 
   @Override
@@ -72,7 +72,7 @@ public class ShooterSub extends SubsystemBase {
 
   // turns on the upper and lower motor of shooter
   public void shooterMotorOn() {
-    upperMotor.set(ControlMode.PercentOutput, 1.0);
+    upperMotor.set(ControlMode.PercentOutput, -1.0);
     lowerMotor.set(ControlMode.PercentOutput,-1.0);
     //upperMotor.set(1.0);
     //lowerMotor.set(-1.0);
@@ -98,7 +98,7 @@ public class ShooterSub extends SubsystemBase {
 
   // trun on intake motor
   public void intakeMotorOn(){
-    intakeMotor.set(0.5);
+    intakeMotor.set(-1);
   }
 
   //turn off intake motor
