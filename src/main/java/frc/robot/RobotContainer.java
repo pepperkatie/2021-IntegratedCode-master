@@ -16,6 +16,7 @@ import frc.robot.commands.AutoDriveDS;
 import frc.robot.commands.Drive;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import frc.robot.commands.Feed;
+import frc.robot.commands.FeedStop;
 import frc.robot.commands.Intake;
 import frc.robot.commands.IntakeOff;
 import frc.robot.commands.Shoot;
@@ -79,6 +80,8 @@ public class RobotContainer {
     // for the feeder
     new JoystickButton(xboxController, k_RBbutton)
     .whenPressed(new Feed(m_shootersub));
+    new JoystickButton(xboxController, k_RBbutton)
+    .whenReleased(new FeedStop(m_shootersub));
     // 2 is the B button
     // for the intake motor
     new JoystickButton(xboxController, k_Bbutton)
@@ -87,13 +90,13 @@ public class RobotContainer {
     .whenReleased(new IntakeOff(m_shootersub));
     // 4 is for the Y
     // aims it up when true and down if false
-    new JoystickButton(xboxController, k_Ybutton)
+    new JoystickButton(xboxController, k_Abutton)
     .whenPressed(new Aim(m_shootersub, true));
     new JoystickButton(xboxController, k_Ybutton)
     .whenReleased(new StopAim(m_shootersub));
     // 1 is for A
     // aims it down
-    new JoystickButton(xboxController, k_Abutton)
+    new JoystickButton(xboxController, k_Ybutton)
     .whenPressed(new Aim(m_shootersub, false));
     new JoystickButton(xboxController, k_Abutton)
     .whenReleased(new StopAim(m_shootersub));

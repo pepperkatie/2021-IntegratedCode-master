@@ -42,15 +42,6 @@ public class Feed extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    // not good to have more than one return 
-    Boolean done = false;
-
-    // if count time grater than 2 seconds, then stop 
-    if(countTime > k_feedCount){
-      m_subsystem.feederMotorOff();
-      countTime = 0;
-      done = true;
-    }
-   return done;
+   return false;
   }
 }

@@ -5,21 +5,21 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+//import java.util.function.DoubleSupplier;
 
 import frc.robot.subsystems.ShooterSub;
 
 import static frc.robot.Constants.*;
 
-public class Aim extends CommandBase {
-  /** Creates a new Aim. */
+public class FeedStop extends CommandBase {
+  /** Creates a new Feed. */
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final ShooterSub m_subsystem;
 
-  private Boolean m_goUP = true;
+  private int countTime = 0;
 
-  public Aim(ShooterSub subsystems, Boolean UP) {
+  public FeedStop(ShooterSub subsystems) {
     // Use addRequirements() here to declare subsystem dependencies.
-    m_goUP = UP;
     m_subsystem = subsystems;
     addRequirements(m_subsystem);
   }
@@ -31,14 +31,8 @@ public class Aim extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double speed = 0.0;
-    if(m_goUP){
-      speed = k_aimSpeedUp;
-    }
-    else{
-      speed = k_aimSpeedDown;      
-    }
-    m_subsystem.positionMotorOn(speed);
+    m_subsystem.feederMotorOff();
+    countTime ++;
   }
 
   // Called once the command ends or is interrupted.
@@ -48,6 +42,6 @@ public class Aim extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+   return false;
   }
 }

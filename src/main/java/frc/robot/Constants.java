@@ -43,7 +43,8 @@ public final class Constants {
     // Talon FX control mode velocity
     public final static int k_UnitsPerRevolution = 2048;
     // speed settings
-    public final static double k_aimSpeed = 0.3;
+    public final static double k_aimSpeedDown = -0.1;
+    public final static double k_aimSpeedUp = 0.5;
 
 
 }
