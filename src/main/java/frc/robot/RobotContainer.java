@@ -22,6 +22,7 @@ import frc.robot.commands.IntakeOff;
 import frc.robot.commands.Shoot;
 import frc.robot.commands.StopShoot;
 import frc.robot.commands.Aim;
+import frc.robot.commands.AimToPos;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.StopAim;
 import static frc.robot.Constants.*;
@@ -100,6 +101,13 @@ public class RobotContainer {
     .whenPressed(new Aim(m_shootersub, false));
     new JoystickButton(xboxController, k_Abutton)
     .whenReleased(new StopAim(m_shootersub));
+
+    new JoystickButton(xboxController, k_Xbutton)
+    .whenPressed(new AimToPos(m_shootersub, false));
+    new JoystickButton(xboxController, k_Xbutton)
+    .whenReleased(new StopAim(m_shootersub));
+
+    
     
   }
 

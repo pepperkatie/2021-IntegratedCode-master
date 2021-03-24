@@ -34,6 +34,7 @@ public final class Constants {
     public final static int k_RBbutton = 6;
     public final static int k_Ybutton = 4;
     public final static int k_Abutton = 1;
+    public final static int k_Xbutton = 3;
     public final static int k_Bbutton = 2;
     // feed count 
     public final static int k_feedCount = 100;

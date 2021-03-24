@@ -62,6 +62,8 @@ public class ShooterSub extends SubsystemBase {
 
   @Override
   public void periodic() {
+    System.out.println(positionMotor.getSelectedSensorPosition());
+
     // This method will be called once per scheduler run
   }
 
@@ -110,7 +112,12 @@ public class ShooterSub extends SubsystemBase {
   public void positionMotorOn(double speed) {
     positionMotor.set(ControlMode.PercentOutput, speed);
   }
-
+  
+  // turns on position motor at specific position
+  public void positionMotorOnAim(double position) {
+    positionMotor.set(ControlMode.Position, position);
+    System.out.println("Test2");
+  }
   // turns off position motor
   public void positionMotorOff() {
     positionMotor.stopMotor();
