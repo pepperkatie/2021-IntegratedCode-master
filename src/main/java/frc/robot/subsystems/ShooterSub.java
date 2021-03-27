@@ -125,6 +125,7 @@ public class ShooterSub extends SubsystemBase {
 
   // turns all motors off
   public void allOff() {
+    int x = 4;
     upperMotor.set(ControlMode.PercentOutput, 0.0);
     lowerMotor.set(ControlMode.PercentOutput, 0.0);
     //upperMotor.stopMotor();
